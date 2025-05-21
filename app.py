@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 # Load model and data
 @st.cache_resource
 def load_model():
-    with open("model.pkl", "rb") as f:
+    with open("random_forest_model", "rb") as f:
         return pickle.load(f)
 
 @st.cache_data
