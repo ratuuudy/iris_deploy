@@ -14,7 +14,7 @@ def load_data():
 # Load model
 @st.cache_resource
 def load_model():
-    return joblib.load('naive_bayes_model_iris_dataset.pkl')
+    return joblib.load('naive_bayes_model.pkl')
 
 df = load_data()
 model = load_model()
@@ -54,7 +54,7 @@ elif page == "Prediction":
     if st.button("Predict"):
         input_features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
         prediction = model.predict(input_features)[0]
-        st.success(f"Predicted Iris Species: *{prediction.capitalize()}*")
+        st.success(f"Predicted Iris Species: {prediction.capitalize()}")
 
 elif page == "Visualization":
     st.title("Data Visualization")
