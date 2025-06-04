@@ -54,7 +54,12 @@ elif page == "Prediction":
     if st.button("Predict"):
         input_features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
         prediction = model.predict(input_features)[0]
-        st.success(f"Predicted Iris Species: {prediction.capitalize()}")
+       # Daftar nama spesies sesuai label angka
+       species_names = ['setosa', 'versicolor', 'virginica']
+
+       # Konversi prediksi angka ke nama spesies
+       predicted_species = species_names[int(prediction)]
+       st.success(f"Predicted Iris Species: {predicted_species.capitalize()}")
 
 elif page == "Visualization":
     st.title("Data Visualization")
